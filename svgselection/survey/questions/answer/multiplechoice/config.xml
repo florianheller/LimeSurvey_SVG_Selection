@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Default configuration for the multiplechoice question template.
+-->
+
+<config>
+    <!-- Those metadata will be displayed in the template configuration page. They are not used for now. -->
+    <metadata>
+        <name>svgSelection</name>
+        <type>question_theme</type>
+        <title>SVG Selection</title>
+        <creationDate>21/02/2020</creationDate>
+        <author>Florian Heller</author>
+        <authorEmail>florian.heller@uhasselt.be</authorEmail>
+        <authorUrl>http://www.heller-web.net</authorUrl>
+        <copyright>Copyright (C) 2020 Hasselt University.</copyright>
+        <license>GNU General Public License version 2 or later</license>
+        <version>1.0</version>
+        <apiVersion>1</apiVersion>
+        <description>Select elements of an SVG image by clicking on them</description>
+        <hasdefaultvalues>1</hasdefaultvalues>
+        <questionType>M</questionType>
+        <group>Multiple choice questions</group>
+        <subquestions>1</subquestions>
+        <answerscales>0</answerscales>
+        <hasdefaultvalues>1</hasdefaultvalues>
+        <assessable>1</assessable>
+        <class>multiple-opt</class>
+    </metadata>
+
+    <compatibility>
+        <version>4.0</version>
+    </compatibility>
+
+    <!--
+        Here the list of the css/js files to load.
+        Any file here will be loaded via the asset manager (when in config.php debug = 0)
+    -->
+    <files>
+        <css>
+            <filename>css/svgSelection.css</filename>
+        </css>
+        <js>
+            <filename>scripts/svgSelection.js</filename>
+        </js>
+        <preview>
+            <filename>images/svgSelectionPreview.png</filename>
+        </preview>
+    </files>
+
+
+    <attributes>
+        <!-- New attributes -->
+        <attribute>
+            <name>svg_image_url</name>
+            <category>Display</category>
+            <sortorder>80</sortorder>
+            <inputtype>text</inputtype>
+            <default></default>
+            <help>An absolute path to the image</help>
+            <caption>Image path</caption>
+            <i18n>en</i18n>
+        </attribute>
+     </attributes>
+
+    <!-- Here datas about how LimeSurvey should load the core js/css of the question -->
+    <engine>
+        <load_core_css>true</load_core_css>
+        <load_core_js>true</load_core_js>
+        <show_as_template>true</show_as_template>
+        <show_as_question_type>true</show_as_question_type>
+    </engine>
+</config>
