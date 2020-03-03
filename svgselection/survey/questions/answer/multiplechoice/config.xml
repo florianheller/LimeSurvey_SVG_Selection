@@ -4,7 +4,7 @@
 -->
 
 <config>
-    <!-- Those metadata will be displayed in the template configuration page. They are not used for now. -->
+    <!-- Metadata-->
     <metadata>
         <name>svgSelection</name>
         <type>question_theme</type>
@@ -56,10 +56,11 @@
             <category>Display</category>
             <sortorder>80</sortorder>
             <inputtype>text</inputtype>
-            <default></default>
+            <default>http://.../file.svg</default>
+            <expression>1</expression>
             <help>An absolute path to the image</help>
             <caption>Image path</caption>
-            <i18n>en</i18n>
+            <i18n></i18n>
         </attribute>
      </attributes>
 
