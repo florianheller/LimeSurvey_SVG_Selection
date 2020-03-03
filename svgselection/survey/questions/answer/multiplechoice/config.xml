@@ -49,7 +49,7 @@
     </files>
 
 
-    <attributes>
+    <custom_attributes>
         <!-- New attributes -->
         <attribute>
             <name>svg_image_url</name>
@@ -62,7 +62,7 @@
             <caption>Image path</caption>
             <i18n></i18n>
         </attribute>
-     </attributes>
+     </custom_attributes>
 
     <!-- Here datas about how LimeSurvey should load the core js/css of the question -->
     <engine>
