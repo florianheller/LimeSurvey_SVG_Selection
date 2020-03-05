@@ -4,7 +4,7 @@ A question theme to create multiple choice questions using SVG images.
 ## Purpose
 I wanted to run a survey where I needed participants select certain elements of a figure and the easiest way of doing so is by clicking. 
 
-##Installation
+## Installation
 Download the svgselection.zip file and install it using the theme editor (LS4) or by uploading its contents to /upload/themes/question/
 
 ## Usage
