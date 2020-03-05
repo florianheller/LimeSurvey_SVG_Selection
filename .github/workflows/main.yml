@@ -24,5 +24,5 @@ jobs:
     # zip the svgselection folder for installation on LimeSurvey
     - name: ZIP svgselection
       run: zip -r svgselection.zip svgselection -x ".git/*" ".github/*"
-
-
+    - name: Release to Github
+      run: echo "Release"
