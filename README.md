@@ -31,8 +31,8 @@ To be able to use an SVG-file with this theme it needs a bit of preparation.
 ### Adding subquestions
 Now add as many subquestions as you have click targets, and assign each subquestion an ID form your SVG. 
 
-#License
+# License
 This question theme is licensed under MIT License. 
 
-#Acknowledgements
+# Acknowledgements
 This work was supported by Hasselt University. 
