@@ -16,21 +16,34 @@
 #}
 
 <!-- answer_row_other -->
-<div class="bootstrap-buttons-div col-xs-12 {{ max_buttons_row }}">
-    <div id='javatbd{{ myfname }}' class="button-item btn btn-primary {{ button_size_class }} {% if checkedState!='' %} active {% endif %} col-xs-12 col-sm-12">
+    <li id='javatbd{{myfname}}' class='question-item answer-item checkbox-text-item form-inline {{relevanceClass}}' >
 
         <!-- Checkbox + label -->
+        <div class="form-group checkbox-item othertext-label-checkox-container">
             <!-- checkbox -->
             <input
-                class="other-checkbox bootstrap-checkbox-other sr-only"
+                class="other-checkbox"
                 type="checkbox"
                 name="{{myfname}}cbox"
                 id="answer{{myfname}}cbox"
-                data-name="{{myfname}}"
                 {{checkedState}}
                 aria-hidden="true"
             />
-            <label for="answer{{myfname}}cbox" class="checkbox-label control-label" id="label-{{myfname}}-other">{{othertext}}</label>
+            <label for="answer{{myfname}}cbox" class="answertext" id="label-{{myfname}}-other">{{ processString(othertext) }}</label>
+        </div>
+
+        <!-- comment -->
+        <div class="form-group text-item other-text-item">
+            <input
+                class="form-control input-sm {{kpclass}}"
+                type="text"
+                name="{{myfname}}"
+                id="answer{{myfname}}"
+                value="{{sValue}}"
+                aria-labelledby="label-{{myfname}}-other"
+            />
+        </div>
+
 
         <!-- hidden input -->
         <input
@@ -38,10 +51,40 @@
             name="java{{myfname}}"
             id="java{{myfname}}"
             value="{{sValueHidden}}"
-            class="button-checkbox-other-value"
-            data-name="{{myfname}}"
         />
-    </div>
-</div>
- <!-- Form group ; item row -->
+
+<script type='text/javascript'>
+    $('#answer{{myfname}}').on('keyup focusout',function(event)
+    {
+        if ($.trim($(this).val()).length>0)
+        {
+            $("#answer{{myfname}}cbox").prop("checked",true);
+        }
+        else
+        {
+            $("#answer{{myfname}}cbox").prop("checked",false);
+        }
+        $("#java{{myfname}}").val($(this).val());
+        LEMflagMandOther("{{myfname}}",$('#answer{{myfname}}cbox').is(":checked"));
+        {{oth_checkconditionFunction}}(this.value, this.name, this.type);
+    });
+
+    $('#answer{{myfname}}cbox').click(function(event)
+    {
+        if (($(this)).is(':checked') && $.trim($("#answer{{myfname}}").val()).length==0)
+        {
+            $("#answer{{myfname}}").focus();
+            LEMflagMandOther("{{myfname}}",true);
+            return false;
+        }
+        else
+        {
+            $("#answer{{myfname}}").val('');
+            {{checkconditionFunction}}("", "{{myfname}}", "text");
+            LEMflagMandOther("{{myfname}}",false);
+            return true;
+        };
+    });
+</script>
+</li> <!-- Form group ; item row -->
 <!-- end of answer_row_other -->
