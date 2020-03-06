@@ -25,7 +25,7 @@ To be able to use an SVG-file with this theme it needs a bit of preparation.
 
 ### Create the question
 - Create a multiple-choice question and set its template to be SVG Selection
-- Upload the SVG file to limesurvey
+- Upload the SVG file to LimeSurvey (Survey Settings — Resources)
 - Add the absolute path in the SVG Path field under 'Display'
 
 ### Adding subquestions
